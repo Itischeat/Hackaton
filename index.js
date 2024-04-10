@@ -30,22 +30,21 @@ const start = () => {
         } else if (data === 'admin') {bot.sendMessage(chatId, 'admin')}
     })
 
-    bot.on('message', msg => {
-        const text = msg.text
-        const chatId = msg.chat.id
+    bot.on('callback_query', msg => {
+        const data = msg.data;
+        const chatId = msg.message.chat.id
 
-        if (text === 'user') {
+        if (data === 'user') {
             bot.sendMessage(chatId, 'Введите ваш пароль')
-        } else { bot.sendMessage(chatId, 'Пользователь не найден')}
-    })
-
-    bot.on('message', msg => {
+                bot.on('message', msg => {
         const text = msg.text
         const chatId = msg.chat.id
 
         if (text === '1234') {
-            bot.sendMessage(chatId, 'Z')
+            bot.sendMessage(chatId, '...')
         }
+    })
+        } else { bot.sendMessage(chatId, 'Пользователь не найден')} //TODO
     })
 }
 
