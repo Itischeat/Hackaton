@@ -7,4 +7,13 @@ module.exports = {
             ] 
         }) 
     },
+    categoriesOpt: {
+        reply_markup: JSON.stringify({
+            inline_keyboard: [
+                [{text: 'Шестерни', callback_data: 'gears'}],
+                [{text: 'Двигатели', callback_data: 'engines'}],
+                [{text: 'Колёса', callback_data: 'wheels'}],
+            ]
+        })
+    }
 }
