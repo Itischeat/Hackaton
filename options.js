@@ -16,5 +16,13 @@ module.exports = {
             ],
             resize_keyboard: true,
         })
-    }
+    },
+    findQuestionKeyBoard: {
+        reply_markup: JSON.stringify({
+            "keyboard": [
+                [{text: 'Главное меню'}, {text: 'Показать ещё'}]
+            ],
+            resize_keyboard: true,
+        })
+    },
 }

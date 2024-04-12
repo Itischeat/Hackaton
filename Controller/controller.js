@@ -32,7 +32,7 @@ class Controller {
     async findAllQuestion() {
         try {
             let qst = await db.query(`select * from question`)
-            return qst
+            return qst.rows
         }
         catch(e) {
             console.log(e)
