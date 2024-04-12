@@ -35,6 +35,13 @@ bot.on('message', (msg) => {
         next++
         bot.sendMessage(chat_id, 'Введите заголовок инструкции')
     }
+    else if (text === 'Посмотреть инструкции') {
+        let questions = controller.findAllQuestion().then((res) => {
+            console.log(res.rows)
+            // cюда
+        })
+        
+    }
     else if (next === 1) {
         next++
         question.title = text
@@ -49,7 +56,7 @@ bot.on('message', (msg) => {
         next = 0
         question.main_tags = text 
         let date = +dayjs()
-        if (!controller.createQuestion(question, date)) {
+        if (controller.createQuestion(question, date)) {
             bot.sendMessage(chat_id, 'Инструкция успешно создана')
         } else {
             bot.sendMessage(chat_id, 'Инстуркиця не создана, попробуйте снова')

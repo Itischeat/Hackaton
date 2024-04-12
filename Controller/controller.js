@@ -31,7 +31,8 @@ class Controller {
     }
     async findAllQuestion() {
         try {
-            await db.query(``) // TODO: дописать запрос
+            let qst = await db.query(`select * from question`)
+            return qst
         }
         catch(e) {
             console.log(e)
