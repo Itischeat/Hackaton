@@ -1,12 +1,4 @@
 module.exports = {
-    userOrAdminOpt: { 
-        reply_markup: JSON.stringify({ 
-            inline_keyboard: [ 
-            [{ text: 'Я пользователь', callback_data: 'user' }], 
-            [{ text: 'Я администратор', callback_data: 'admin' }],  
-            ] 
-        }) 
-    },
     firstStep: {
         reply_markup: JSON.stringify({
             "keyboard": [
@@ -15,13 +7,14 @@ module.exports = {
             resize_keyboard: true,
         })
     },
-    categoriesOpt: {
+    mainMenu: {
         reply_markup: JSON.stringify({
-            inline_keyboard: [
-                [{text: 'Шестерни', callback_data: 'gears'}],
-                [{text: 'Двигатели', callback_data: 'engines'}],
-                [{text: 'Колёса', callback_data: 'wheels'}],
-            ]
+            "keyboard": [
+                [{text: 'Посмотреть инструкции'}, {text: 'Создать инструкицю'}],
+                [{text: 'Поиск инструкции по тексту'}, {text: 'Мои инструкции'}, {text: 'Мои ответы'}],
+                [{text: 'Рейтинг пользавателей'}, {text: 'Подписаться на новые инструкции'}]
+            ],
+            resize_keyboard: true,
         })
     }
 }
