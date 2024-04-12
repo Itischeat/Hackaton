@@ -29,6 +29,14 @@ class Controller {
             return false
         }
     }
+    async findAllQuestion() {
+        try {
+            await db.query(``) // TODO: дописать запрос
+        }
+        catch(e) {
+            console.log(e)
+        }
+    }
 }
 
 module.exports = new Controller()
