@@ -19,6 +19,16 @@ class Controller {
             console.log(e)
         }
     }
+    async createQuestion(obj, timestamp) { // TODO: Не работает проверка готовности создания инструкции
+        try {
+            await db.query(`INSERT into question (title, body, created_date, main_tags, author_id) values ('${obj.title}', '${obj.body}', '${timestamp}', '${obj.main_tags}', ${obj.user_id})`)
+            return true
+        }
+        catch(e) {
+            console.log(e)
+            return false
+        }
+    }
 }
 
 module.exports = new Controller()

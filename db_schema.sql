@@ -13,8 +13,8 @@ create table question (
 	title text not null,
 	body text not null,
 	trust boolean default(false),
-	likes int,
-	created_date timestamp not null,
+	likes int default(0),
+	created_date bigint not null,
 	main_tags varchar(64),
 	author_id int references users(tg_id)
 );
