@@ -1,7 +1,7 @@
 const TelegramApi = require('node-telegram-bot-api')
 const dayjs = require('dayjs')
 
-const TOKEN = '6465619200:AAGOSAYWKH-d-5BsZ6_krifAW4cuz8YM9J4';
+const TOKEN = process.env.TOKEN || '6465619200:AAGOSAYWKH-d-5BsZ6_krifAW4cuz8YM9J4';
 
 const bot = new TelegramApi(TOKEN, { polling: true })
 
