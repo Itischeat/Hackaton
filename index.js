@@ -398,7 +398,7 @@ async function getMyAnswer(chat_id, user_id, max_lists = 5, start = 0) {
             }
             catch(e) {
                 clearInterval(inter)
-                bot.sendMessage(chat_id, 'Ответы закончились', findQuestionKeyBoard)
+                bot.sendMessage(chat_id, 'Ответы закончились', findAnswerKeyBoard)
             }
         }, 115)
     })
